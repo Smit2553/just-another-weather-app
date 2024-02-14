@@ -10,7 +10,18 @@ import {
 import Weather from "../components/weather.js";
 
 const App = () => {
-  return <Weather city="London" />;
+  return (
+    <View style={styles.container}>
+      <Weather city="London" />
+      <Weather city="London" />
+    </View>
+  );
 };
+
+const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+  },
+});
 
 export default App;

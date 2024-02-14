@@ -8,36 +8,59 @@ const API_URL = "https://api.openweathermap.org/data/2.5/weather";
 const Weather = ({ city }) => {
   return (
     <View style={styles.container}>
-      <Text style={styles.city}>Test</Text>
-      <Text style={styles.temperature}>10</Text>
-      <Text style={styles.description}>Weather</Text>
-      <Image
-        style={styles.icon}
-        source={{
-          uri: `https://openweathermap.org/img/wn/01n.png`,
-        }}
-      />
+      <View style={styles.textContainer}>
+        <Text style={styles.city}>Test</Text>
+        <Text style={styles.temperature}>10°</Text>
+      </View>
+      <View style={styles.textContainer}>
+        <Text style={styles.description}>Weather</Text>
+        <Text style={styles.sub_temperature}>H: 10° L: 5°</Text>
+      </View>
     </View>
   );
 };
 
 const styles = StyleSheet.create({
   container: {
-    alignItems: "center",
     justifyContent: "center",
+    borderRadius: 10,
+    padding: 15,
+    margin: 10,
+    backgroundColor: "lightblue",
+  },
+  textContainer: {
+    flexDirection: "row", // Set the direction to row
+    justifyContent: "space-between", // Align items with space between them
+    marginBottom: 5,
   },
   city: {
     fontSize: 24,
     fontWeight: "bold",
-    marginBottom: 5,
+    color: "white",
+    textShadowColor: "rgba(0, 0, 0, 0.50)",
+    textShadowRadius: 5,
   },
   temperature: {
+    fontSize: 30,
+    fontWeight: "bold",
+    textAlign: "right",
+    textShadowColor: "rgba(0, 0, 0, 0.50)",
+    textShadowRadius: 5,
+    color: "white",
+  },
+  sub_temperature: {
     fontSize: 18,
-    marginBottom: 5,
+    textAlign: "right",
+    textShadowColor: "rgba(0, 0, 0, 0.50)",
+    textShadowRadius: 5,
+    color: "white",
   },
   description: {
-    fontSize: 16,
+    fontSize: 18,
     marginBottom: 10,
+    color: "white",
+    textShadowColor: "rgba(0, 0, 0, 0.50)",
+    textShadowRadius: 5,
   },
   icon: {
     width: 50,
