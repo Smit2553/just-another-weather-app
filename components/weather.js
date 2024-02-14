@@ -1,22 +1,28 @@
 import React, { useState, useEffect } from "react";
 import { View, Text, StyleSheet, Image } from "react-native";
+import { Button } from "react-native-web";
+import { useNavigation } from "@react-navigation/native";
+import { TouchableOpacity } from "react-native";
 
 const OWM_API_KEY = process.env.OWM_API_KEY;
 
 const API_URL = "https://api.openweathermap.org/data/2.5/weather";
 
 const Weather = ({ city }) => {
+  const navigation = useNavigation();
   return (
-    <View style={styles.container}>
-      <View style={styles.textContainer}>
-        <Text style={styles.city}>Test</Text>
-        <Text style={styles.temperature}>10°</Text>
+    <TouchableOpacity onPress={() => navigation.navigate("Weather Details")}>
+      <View style={styles.container}>
+        <View style={styles.textContainer}>
+          <Text style={styles.city}>Test</Text>
+          <Text style={styles.temperature}>10°</Text>
+        </View>
+        <View style={styles.textContainer}>
+          <Text style={styles.description}>Weather</Text>
+          <Text style={styles.sub_temperature}>H: 10° L: 5°</Text>
+        </View>
       </View>
-      <View style={styles.textContainer}>
-        <Text style={styles.description}>Weather</Text>
-        <Text style={styles.sub_temperature}>H: 10° L: 5°</Text>
-      </View>
-    </View>
+    </TouchableOpacity>
   );
 };
 
