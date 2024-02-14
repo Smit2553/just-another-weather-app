@@ -1,8 +1,10 @@
+// WeatherDetails.js
 import React from "react";
-import { View, Text, StyleSheet, Image } from "react-native";
+import { View, Text, StyleSheet } from "react-native";
 import { LinearGradient } from "expo-linear-gradient";
+import WeatherForecast from "../components/weatherForecast";
 
-const App = () => {
+const WeatherDetails = () => {
   return (
     <LinearGradient
       colors={["#020024", "#090979", "#00d4ff"]}
@@ -13,6 +15,7 @@ const App = () => {
         <Text style={styles.temperature}>10°</Text>
         <Text style={styles.description}>Clear Skies</Text>
         <Text style={styles.sub_temperature}>High: 10° Low: 5°</Text>
+        <WeatherForecast />
       </View>
     </LinearGradient>
   );
@@ -26,7 +29,6 @@ const styles = StyleSheet.create({
   },
   content: {
     flex: 1,
-    justifyContent: "center",
     alignItems: "center",
   },
   city: {
@@ -58,4 +60,4 @@ const styles = StyleSheet.create({
   },
 });
 
-export default App;
+export default WeatherDetails;
